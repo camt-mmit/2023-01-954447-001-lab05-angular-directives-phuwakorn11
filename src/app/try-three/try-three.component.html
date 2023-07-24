@@ -1,0 +1,15 @@
+<h2>Try Three</h2>
+<button type="button" (click)="add()">Add</button>
+<br />
+<div class="cmp-inputs-list">
+  <div *ngFor="let item of items; let i = index">
+    <input
+      #elem
+      type="number"
+      [value]="item.value"
+      (change)="onChange(i, elem)"
+    />
+    <button type="button" (click)="delete(i)">Delete</button>
+  </div>
+</div>
+<output>{{ getResult() }}</output>
