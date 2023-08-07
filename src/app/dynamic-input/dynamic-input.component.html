@@ -1,0 +1,25 @@
+<button type="button" (click)="addInput()">Add Input</button>
+<div class="container">
+  <div class="input-list">
+    <div *ngFor="let input of inputs; let i = index">
+      <span class="input-number">Number :: {{ i + 1 }} </span>
+      <input
+        class="input-box"
+        type="number"
+        #elem
+        [value]="input.value"
+        (change)="onChange(i, elem.valueAsNumber)"
+      />
+      <button type="button" (click)="deleteInput(i)" [disabled]="isDisabled">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <div class="footer">
+      <b class="result-title">Result:</b>
+      <output class="result-output">{{ getResult() }}</output>
+    </div>
+  </div>
+</div>

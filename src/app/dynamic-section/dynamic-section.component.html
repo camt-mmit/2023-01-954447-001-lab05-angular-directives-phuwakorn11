@@ -1,0 +1,13 @@
+<div class="all-section">
+  <button type="button" (click)="addSection()">Add Section</button>
+</div>
+
+<section class="section-group" *ngFor="let item of items; let i = index">
+  <div class="section-header">
+    <h2>Section {{ i + 1 }}</h2>
+    <button type="button" (click)="deleteSection(i)" [disabled]="isDisabled">
+      Delete Section
+    </button>
+  </div>
+  <app-dynamic-input></app-dynamic-input>
+</section>
